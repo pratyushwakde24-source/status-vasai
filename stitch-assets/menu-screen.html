@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu | Status Vasai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#201f1f",
+                    "surface": "#131313",
+                    "background": "#131313",
+                    "surface-container-highest": "#353534",
+                    "surface-variant": "#353534",
+                    "surface-container-low": "#1c1b1b",
+                    "secondary-container": "#ffbf00",
+                    "secondary": "#ffe2ab",
+                    "on-tertiary-container": "#723200",
+                    "on-error": "#690005",
+                    "tertiary-container": "#f89c64",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#3c2f00",
+                    "on-surface-variant": "#d0c5af",
+                    "secondary-fixed": "#ffdfa0",
+                    "secondary-fixed-dim": "#fbbc00",
+                    "inverse-on-surface": "#313030",
+                    "outline": "#99907c",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-bright": "#393939",
+                    "on-secondary-fixed": "#261a00",
+                    "tertiary-fixed-dim": "#ffb68c",
+                    "inverse-primary": "#735c00",
+                    "primary-container": "#d4af37",
+                    "surface-dim": "#131313",
+                    "primary": "#f2ca50",
+                    "tertiary-fixed": "#ffdbc9",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "on-secondary": "#402d00",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface-tint": "#e9c349",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-fixed": "#241a00",
+                    "outline-variant": "#4d4635",
+                    "on-tertiary-fixed-variant": "#753401",
+                    "on-primary-container": "#554300",
+                    "on-secondary-container": "#6d5000",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#321200",
+                    "tertiary": "#ffc19e",
+                    "on-tertiary": "#532200",
+                    "primary-fixed": "#ffe088"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Inter"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .cinematic-reveal {
+            overflow: hidden;
+            position: relative;
+        }
+        .cinematic-reveal img {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .cinematic-reveal:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md dark:bg-surface/80 flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#d4af37]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-[0.2em] text-[#d4af37] font-headline uppercase">STATUS VASAI</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 font-headline tracking-widest uppercase text-sm">
+<a class="text-[#e5e2e1] hover:text-[#ffbf00] transition-colors duration-400" href="#">Home</a>
+<a class="text-[#f2ca50] hover:text-[#ffbf00] transition-colors duration-400" href="#">Menu</a>
+<a class="text-[#e5e2e1] hover:text-[#ffbf00] transition-colors duration-400" href="#">Bookings</a>
+</div>
+<button class="text-[#d4af37]">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Search and Filter Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row gap-6 items-end justify-between">
+<div class="w-full md:max-w-md">
+<label class="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">Refine Search</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface placeholder:text-outline-variant py-4 pl-12 rounded-t-lg transition-all duration-400" placeholder="Cravings? Search here..." type="text"/>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 items-center">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/15 hover:border-primary/40 transition-all font-label text-xs uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span> Filters
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/15 font-label text-xs uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm text-green-500" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span> Veg
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/15 font-label text-xs uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm text-red-500" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span> Non-Veg
+                    </button>
+</div>
+</div>
+</section>
+<!-- Categories Navigation -->
+<nav class="mb-12 overflow-x-auto no-scrollbar -mx-6 px-6">
+<ul class="flex gap-8 border-b border-outline-variant/10 pb-4 min-w-max">
+<li class="relative">
+<button class="font-headline text-lg tracking-widest uppercase text-primary">North Indian</button>
+<div class="absolute -bottom-4 left-0 w-full h-0.5 bg-primary"></div>
+</li>
+<li><button class="font-headline text-lg tracking-widest uppercase text-on-surface/40 hover:text-on-surface transition-colors">Chinese</button></li>
+<li><button class="font-headline text-lg tracking-widest uppercase text-on-surface/40 hover:text-on-surface transition-colors">Mughlai</button></li>
+<li><button class="font-headline text-lg tracking-widest uppercase text-on-surface/40 hover:text-on-surface transition-colors">Biryani</button></li>
+<li><button class="font-headline text-lg tracking-widest uppercase text-on-surface/40 hover:text-on-surface transition-colors">Drinks</button></li>
+</ul>
+</nav>
+<!-- Menu Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Item 1 -->
+<article class="group bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="cinematic-reveal h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="succulent tandoori chicken legs with charred edges on a black ceramic plate with garnish and dramatic moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzfaVeybV5ojc1nh1SV3s9-H5k-Ikc3luoaF_20UUaULXY2Mwtfmz0ATRyNOcWuDb-UsHH9mn8860-ESMs0zftichb7ASyWzSsKRiRi0-SBQTTrF6nCU2A9uksXoxOeA1L_9VUUIhlgzohmQGXxo6N5LIR_wkHp1gYt7rZXf_pjmOnftOIDWkqVvD6XtZpJ5yoI5b9cYC7aP4xrnY4f-CAbzkGwmXBnKGc5yHR04t7OO6kYtz-KcTXSnIh1kRu3XywrLIKAhnDRQk"/>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="bg-primary text-on-primary font-label text-[10px] font-extrabold uppercase px-3 py-1 rounded-sm shadow-xl">Best Seller</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Royal Tandoori Murg</h3>
+<span class="font-label font-bold text-primary">₹545</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 font-body leading-relaxed">Whole chicken marinated overnight in our secret hand-pounded spices and yogurt, roasted in a traditional clay oven.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-[#ffbf00]">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-label font-bold uppercase tracking-widest">4.9 (120+)</span>
+</div>
+<button class="bg-primary text-on-primary font-label text-xs font-bold uppercase px-6 py-3 rounded-lg hover:bg-secondary-container hover:shadow-[0_0_20px_rgba(242,202,80,0.3)] transition-all duration-300 active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</article>
+<!-- Item 2 -->
+<article class="group bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="cinematic-reveal h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="rich creamy black lentils simmered in butter and tomato gravy served in a copper bowl with swirl of cream" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxXlgBQwOhblX99icHVyJD0cZNco483A1HNs3S5Po8KxEAxTMjq7N9ERXiSqE-JK4RGqWhS220yfjNB_R7b3l59o60gExeDdCoRCImmhhJPcT_4inygzuV0JFoyCPJj_jsaQABrEfKVDJ9QhVV9No9CYq-mPSYpQfVmlaw2uPmc_6bdAoESOd1S5jXTstdqq-J5bP7Sr7yriROTHZZzg7XgiFGE1XR5LbZEqjBlrCi-7Q0YpG73MotE6JcQCZny7dMl499NehdLk8"/>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="bg-secondary-container text-on-secondary-container font-label text-[10px] font-extrabold uppercase px-3 py-1 rounded-sm shadow-xl">Chef Special</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Dal Status Signature</h3>
+<span class="font-label font-bold text-primary">₹395</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 font-body leading-relaxed">Slow-cooked black lentils simmered for 24 hours with vine-ripened tomatoes and white butter.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-[#ffbf00]">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-label font-bold uppercase tracking-widest">4.8 (250+)</span>
+</div>
+<button class="bg-primary text-on-primary font-label text-xs font-bold uppercase px-6 py-3 rounded-lg hover:bg-secondary-container hover:shadow-[0_0_20px_rgba(242,202,80,0.3)] transition-all duration-300 active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</article>
+<!-- Item 3 -->
+<article class="group bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="cinematic-reveal h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="tender cubes of paneer in a vibrant spinach gravy with ginger julienne and dollop of cream on top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxjnmcYJ8DMqcMxIZ4eefyESPzRj-JjT-O9wmch_EY_KLIbXvUHn7yLtGq25ahb7BWnXB7d8r9pI7l39hO_3YAhd9_1OdwBEYA07yyKOWgmjlORSfzTgzBQTtmiY6bDnN6wSBEsffk0KR0aOp2AoUTERHyp--Yy-HvsifKSTaHYp338emvEQMX9fkC4yXbH2wOVHbhSbHMUHOMJbRB1Xad5ZJ7u7KsI4c3IMsZDk9CRjHlJnaf9lszzZZ3JZaXj6XeNlpIDuO-OcM"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Paneer Tikka Lababdar</h3>
+<span class="font-label font-bold text-primary">₹445</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 font-body leading-relaxed">Char-grilled cottage cheese cubes folded into a rich onion-tomato gravy with melon seeds and ginger.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-[#ffbf00]">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-label font-bold uppercase tracking-widest">4.7 (80+)</span>
+</div>
+<button class="bg-primary text-on-primary font-label text-xs font-bold uppercase px-6 py-3 rounded-lg hover:bg-secondary-container hover:shadow-[0_0_20px_rgba(242,202,80,0.3)] transition-all duration-300 active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</article>
+<!-- Item 4 -->
+<article class="group bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="cinematic-reveal h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="fragrant long grain basmati rice layered with spiced meat and saffron garnished with fried onions and mint" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCncN__-G2kuqzjy049I2vet5GIZjrJu8CY-klTkAiidyGEkxg4zPF3Wr9w5jYPAao8JWSXUsgLqMtpYYrw79VfKZLuu3Q1GtZkkKTdplc_m5VpG_yhglq0M6a-v87WCJJ04nbYRi2J8p_jDdFmf__tlYWOc6BIZlnOi1jAHY3vsSt_mLWiPoCWT443JwJif5rCcCNaiFNBcfgD1HwMyeKf3Ccqg4DZyVHom6trLIB_UNQP1oRhjXEyHzE9sD7tfsC3tr7yAxB0xqI"/>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="bg-primary text-on-primary font-label text-[10px] font-extrabold uppercase px-3 py-1 rounded-sm shadow-xl">Best Seller</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Vasai Fort Biryani</h3>
+<span class="font-label font-bold text-primary">₹595</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 font-body leading-relaxed">A majestic blend of aged basmati and marinated mutton, dum-cooked in a sealed dough pot.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-[#ffbf00]">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-label font-bold uppercase tracking-widest">5.0 (400+)</span>
+</div>
+<button class="bg-primary text-on-primary font-label text-xs font-bold uppercase px-6 py-3 rounded-lg hover:bg-secondary-container hover:shadow-[0_0_20px_rgba(242,202,80,0.3)] transition-all duration-300 active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</article>
+<!-- Item 5 -->
+<article class="group bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="cinematic-reveal h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="crispy honey chili potatoes with sesame seeds and spring onions on a modern white plate with dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoIUMWV3FQRajoSHNdQ02f_Z-Ld49KnaHouEIlikNfFGewuDWbQinVtJoY1dxXASdYjWyu73dkgJAA1U6_QLmWUCgjpxuCewdieDcCa3P6YMdhbwkfA9kZQkNNqc8p2ntjX5dnmiV3mEih4K5lOZbqBTjjn8lEZe4WepjQSKynGYHVX260nd-0U19EBotkwK34zHDwFM9PzdDm0MaKVZagfEoGAf329Hhp2AbmW4OaJiddbpXVbJ4KTcvfZv6lfFgBqEtD0YrMpuQ"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Crispy Lotus Stem</h3>
+<span class="font-label font-bold text-primary">₹375</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 font-body leading-relaxed">Thinly sliced lotus root chips tossed in a spicy-sweet Sichuan reduction with toasted sesame.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-[#ffbf00]">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-label font-bold uppercase tracking-widest">4.6 (56)</span>
+</div>
+<button class="bg-primary text-on-primary font-label text-xs font-bold uppercase px-6 py-3 rounded-lg hover:bg-secondary-container hover:shadow-[0_0_20px_rgba(242,202,80,0.3)] transition-all duration-300 active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</article>
+<!-- Item 6 -->
+<article class="group bg-surface-container-low rounded-lg overflow-hidden border border-outline-variant/5 hover:border-primary/20 transition-all duration-500">
+<div class="cinematic-reveal h-64 w-full">
+<img class="w-full h-full object-cover" data-alt="elegant cocktail in a crystal coupe glass garnished with a dried orange slice in a dimly lit sophisticated lounge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8quKlEk-qiE5uiJZxGUlSPXaSmGmv_zwpI3gFHSBl94fjpUmJHXYat_kEPnIUwcBEW0IEGKMmzw3DfXYskmGQHOZTQpQrE5G6lxfz0GsF6dh7l_Fa3a8C_T7WOev17p944hReSnAvQekzyxVidKj0gijU35bvLBDz4l0e_mbpVMbf4eYM6xXpIY6N1gZrNksiWwYT0tb6U-Ma72gYt3OX3B1zweuFTH_aHjRMhiZI-AGTkCjFSuDa6WzFEWD98SlDg3DZOC8DSVU"/>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<span class="bg-secondary-container text-on-secondary-container font-label text-[10px] font-extrabold uppercase px-3 py-1 rounded-sm shadow-xl">Mixologist Pick</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">The Gold Rush</h3>
+<span class="font-label font-bold text-primary">₹650</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 font-body leading-relaxed">Artisan bourbon, organic wildflower honey, and freshly squeezed lemon. Shaken to perfection.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-[#ffbf00]">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-xs font-label font-bold uppercase tracking-widest">4.9 (32)</span>
+</div>
+<button class="bg-primary text-on-primary font-label text-xs font-bold uppercase px-6 py-3 rounded-lg hover:bg-secondary-container hover:shadow-[0_0_20px_rgba(242,202,80,0.3)] transition-all duration-300 active:scale-95">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Floating Cart Button (Customized FAB) -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-40 w-full max-w-xs md:max-w-md px-4">
+<button class="w-full bg-[#f2ca50] text-[#3c2f00] flex items-center justify-between px-6 py-4 rounded-full shadow-[0_10px_40px_rgba(242,202,80,0.4)] transition-transform active:scale-95 group">
+<div class="flex items-center gap-4">
+<div class="bg-[#3c2f00] text-[#f2ca50] w-8 h-8 rounded-full flex items-center justify-center font-label font-bold text-xs">2</div>
+<div class="text-left">
+<p class="font-label text-[10px] font-extrabold uppercase tracking-widest leading-none">View Cart</p>
+<p class="font-headline text-sm font-bold">2 ITEMS SELECTED</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline text-lg font-bold">₹940</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+</div>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center py-3 px-4 bg-[#131313]/90 backdrop-blur-xl fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full border border-[#d4af37]/15 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/60 transition-all duration-300 ease-in-out hover:text-[#f2ca50]" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-manrope text-[10px] uppercase tracking-tighter mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#f2ca50] scale-110 transition-all duration-300 ease-in-out hover:text-[#f2ca50]" href="#">
+<span class="material-symbols-outlined" data-icon="restaurant_menu" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="font-manrope text-[10px] uppercase tracking-tighter mt-1">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/60 transition-all duration-300 ease-in-out hover:text-[#f2ca50]" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+<span class="font-manrope text-[10px] uppercase tracking-tighter mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#e5e2e1]/60 transition-all duration-300 ease-in-out hover:text-[#f2ca50]" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-manrope text-[10px] uppercase tracking-tighter mt-1">Profile</span>
+</a>
+</nav>
+<!-- Footer Shell -->
+<footer class="w-full py-12 px-6 mt-auto bg-[#0e0e0e] flex flex-col md:flex-row justify-between items-center gap-4 border-t border-[#d4af37]/5">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-sm font-serif text-[#d4af37] font-headline uppercase tracking-widest">STATUS VASAI</span>
+<p class="font-manrope text-xs opacity-60 text-[#e5e2e1]">© 2024 Status Vasai. All Rights Reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-manrope text-xs opacity-60 text-[#e5e2e1] hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-manrope text-xs opacity-60 text-[#e5e2e1] hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+</div>
+</footer>
+</body></html>
