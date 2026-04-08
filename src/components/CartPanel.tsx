@@ -3,7 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useCart } from "../lib/cart-context";
-import { X, ShoppingBag, Trash2 } from "lucide-react";
+import { X, ShoppingBag, Trash2, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function CartPanel() {
   const {
@@ -16,6 +17,7 @@ export default function CartPanel() {
     isCartOpen,
     setIsCartOpen,
   } = useCart();
+  const router = useRouter();
 
   return (
     <AnimatePresence>
@@ -40,13 +42,28 @@ export default function CartPanel() {
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-outline-variant/10">
-              <div>
-                <h2 className="font-headline text-xl text-on-surface">
-                  Your Order
-                </h2>
-                <p className="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">
-                  {totalItems} {totalItems === 1 ? "item" : "items"}
-                </p>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => {
+                    setIsCartOpen(false);
+                    if (window.history.length > 1) {
+                      router.back();
+                    } else {
+                      router.push("/");
+                    }
+                  }}
+                  className="group p-2 rounded-full border border-outline-variant/10 hover:border-primary/30 hover:bg-primary/5 transition-all"
+                >
+                  <ArrowLeft size={20} className="text-on-surface-variant group-hover:text-primary group-hover:-translate-x-0.5 transition-all" />
+                </button>
+                <div>
+                  <h2 className="font-headline text-xl text-on-surface">
+                    Your Cart
+                  </h2>
+                  <p className="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.2em] mt-0.5">
+                    {totalItems} {totalItems === 1 ? "item" : "items"}
+                  </p>
+                </div>
               </div>
               <button
                 onClick={() => setIsCartOpen(false)}

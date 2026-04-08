@@ -4,6 +4,7 @@ import { useCart } from "@/lib/cart-context";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Footer from "@/components/Footer";
 
@@ -64,8 +65,24 @@ export default function CheckoutPage() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12"
+          className="mb-8"
         >
+          <button
+            onClick={() => {
+              if (window.history.length > 1) {
+                router.back();
+              } else {
+                router.push("/");
+              }
+            }}
+            className="group flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all duration-300 mb-8"
+          >
+            <div className="p-2 rounded-full bg-surface-container border border-outline-variant/30 group-hover:border-primary group-hover:bg-primary/5 transition-all">
+              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            </div>
+            <span className="text-xs uppercase tracking-[0.3em] font-label">Back</span>
+          </button>
+
           <p className="font-label text-[11px] uppercase tracking-[0.4em] text-primary-container mb-3">
             Final Step
           </p>
