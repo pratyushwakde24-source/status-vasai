@@ -41,33 +41,33 @@ export default function CartPanel() {
             className="fixed right-0 top-0 bottom-0 z-[70] w-full max-w-md bg-surface-container-lowest border-l border-outline-variant/10 flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-5 border-b border-outline-variant/10">
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => {
-                    setIsCartOpen(false);
-                    if (window.history.length > 1) {
-                      router.back();
-                    } else {
-                      router.push("/");
-                    }
-                  }}
-                  className="group p-2 rounded-full border border-outline-variant/10 hover:border-primary/30 hover:bg-primary/5 transition-all"
-                >
-                  <ArrowLeft size={20} className="text-on-surface-variant group-hover:text-primary group-hover:-translate-x-0.5 transition-all" />
-                </button>
-                <div>
-                  <h2 className="font-headline text-xl text-on-surface">
-                    Your Cart
-                  </h2>
-                  <p className="font-label text-[10px] text-on-surface-variant uppercase tracking-[0.2em] mt-0.5">
-                    {totalItems} {totalItems === 1 ? "item" : "items"}
-                  </p>
-                </div>
+            <div className="sticky top-0 z-10 flex items-center justify-between px-4 py-5 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/10">
+              {/* Back to Home Button */}
+              <button
+                onClick={() => {
+                  setIsCartOpen(false);
+                  router.push("/");
+                }}
+                className="group flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/10 transition-all active:scale-90"
+                aria-label="Back to home"
+              >
+                <ArrowLeft size={24} className="text-[#D4AF37] group-hover:-translate-x-1 transition-transform" />
+              </button>
+
+              {/* Centered Title */}
+              <div className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none">
+                <h2 className="font-headline text-lg md:text-xl text-on-surface tracking-wide">
+                  Your Cart
+                </h2>
+                <p className="font-label text-[9px] text-on-surface-variant uppercase tracking-[0.2em]">
+                  {totalItems} {totalItems === 1 ? "item" : "items"}
+                </p>
               </div>
+
+              {/* Close Button */}
               <button
                 onClick={() => setIsCartOpen(false)}
-                className="text-on-surface-variant hover:text-on-surface transition-colors"
+                className="w-10 h-10 flex items-center justify-center text-on-surface-variant/60 hover:text-on-surface transition-colors"
               >
                 <X size={24} />
               </button>

@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { menuItems, menuCategories } from "@/lib/data";
+import { Search } from "lucide-react";
 import MenuCard from "@/components/MenuCard";
 import Footer from "@/components/Footer";
 
@@ -48,24 +49,22 @@ export default function MenuPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="mb-12"
+          className="mb-8"
         >
-          <div className="flex flex-col md:flex-row gap-6 items-end justify-between">
-            {/* Search */}
-            <div className="w-full md:max-w-md">
-              <label className="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">
-                Refine Search
-              </label>
+          <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
+            {/* Search Bar */}
+            <div className="w-full md:max-w-xl">
               <div className="relative group">
-                <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-primary transition-colors">
-                  search
-                </span>
+                <Search 
+                  size={20} 
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" 
+                />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Cravings? Search here..."
-                  className="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary text-on-surface placeholder:text-outline-variant py-4 pl-12 rounded-t-lg transition-all duration-400"
+                  placeholder="Search dishes..."
+                  className="w-full bg-surface-container/40 backdrop-blur-md border border-outline-variant/30 focus:border-primary/60 focus:ring-4 focus:ring-primary/5 text-on-surface placeholder:text-on-surface-variant/50 py-4 pl-12 pr-6 rounded-2xl transition-all duration-300 outline-none font-label text-sm md:text-base shadow-lg shadow-black/5"
                 />
               </div>
             </div>
