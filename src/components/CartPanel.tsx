@@ -184,11 +184,19 @@ export default function CartPanel() {
                 <button 
                   onClick={() => {
                     setIsCartOpen(false);
-                    // use Next navigation or window.location
-                    window.location.href = "/checkout";
+                    router.push("/checkout");
                   }}
                   className="w-full py-4 bg-primary text-on-primary font-label text-sm font-bold uppercase tracking-widest rounded-sm glow-gold hover:shadow-[0_0_30px_rgba(242,202,80,0.5)] transition-all duration-300 active:scale-[0.98]">
                   Proceed to Checkout — ₹{totalPrice}
+                </button>
+
+                <button 
+                  onClick={() => {
+                    setIsCartOpen(false);
+                    router.push("/menu");
+                  }}
+                  className="w-full py-3 bg-transparent text-on-surface-variant font-label text-[10px] uppercase tracking-[0.2em] hover:text-primary transition-colors">
+                  Continue Shopping
                 </button>
               </div>
             )}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Home, UtensilsCrossed, CalendarDays, PartyPopper, User } from "lucide-react";
+import { useCart } from "@/lib/cart-context";
 
 const navItems = [
   { href: "/", icon: Home, label: "Home" },
@@ -15,6 +16,7 @@ const navItems = [
 
 export default function BottomNav() {
   const pathname = usePathname();
+  const { setIsCartOpen } = useCart();
 
   return (
     <motion.nav
@@ -30,6 +32,7 @@ export default function BottomNav() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => setIsCartOpen(false)}
               className={`flex flex-col items-center justify-center transition-all duration-500 relative ${
                 isActive
                   ? "text-[#C9A96E] scale-110"

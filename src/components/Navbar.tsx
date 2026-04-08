@@ -52,6 +52,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setIsCartOpen(false)}
                 className="text-white/80 hover:text-[#C9A96E] transition-colors duration-500 relative group py-2"
               >
                 {link.label}
@@ -86,6 +87,7 @@ export default function Navbar() {
 
             <Link
               href="/bookings"
+              onClick={() => setIsCartOpen(false)}
               className="hidden md:inline-flex items-center justify-center bg-transparent border border-[#C9A96E]/50 text-[#C9A96E] font-label text-[10px] font-bold uppercase px-7 py-2.5 rounded-none hover:bg-[#C9A96E] hover:text-black transition-all duration-500 tracking-[0.2em]"
             >
               Book Table
@@ -132,7 +134,10 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => {
+                      setMobileOpen(false);
+                      setIsCartOpen(false);
+                    }}
                     className="font-headline text-3xl tracking-[0.2em] uppercase text-white hover:text-[#C9A96E] transition-all duration-500 py-2 block text-center"
                   >
                     {link.label}
@@ -149,7 +154,10 @@ export default function Navbar() {
               >
                 <Link
                   href="/bookings"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => {
+                    setMobileOpen(false);
+                    setIsCartOpen(false);
+                  }}
                   className="bg-[#C9A96E] text-black font-label text-[11px] font-bold uppercase px-12 py-4 tracking-[0.2em] shadow-2xl active:scale-95 transition-all"
                 >
                   Book a Table
